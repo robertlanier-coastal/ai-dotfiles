@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+
+# Claude local and runtime data
+.claude/settings.json
+.claude/settings.local.json
+.claude/projects/
+.claude/plugins/
+.claude/cache/
+.claude/debug/
+.claude/backups/
+.claude/session-env/
+.claude/shell-snapshots/
