@@ -32,8 +32,7 @@ Use this for instructions that apply regardless of what files are being edited.
 ```markdown
 # Skill Usage
 
-- Use `phr-beta:creating-feature-branch` when starting new work.
-- Use `phr:committing-changes` for all commits.
+- Use `commit-commands:commit` for all commits.
 ```
 
 ## Path-scoped rules (with frontmatter)
