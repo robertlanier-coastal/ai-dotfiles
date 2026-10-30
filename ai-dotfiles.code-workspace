@@ -1,0 +1,33 @@
+{
+  "folders": [
+    {
+      "name": "ai-dotfiles",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.DS_Store": true
+    },
+    "search.exclude": {
+      ".claude/projects": true,
+      ".claude/plugins": true,
+      ".claude/cache": true,
+      ".claude/debug": true,
+      ".claude/backups": true,
+      ".claude/session-env": true,
+      ".claude/shell-snapshots": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+      "files.trimTrailingWhitespace": false
+    },
+    "markdownlint.config": {
+      "MD060": false
+    }
+  },
+  "extensions": {
+    "recommendations": ["DavidAnson.vscode-markdownlint"]
+  }
+}
