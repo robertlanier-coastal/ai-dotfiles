@@ -25,9 +25,15 @@ ai-dotfiles/
 │   ├── settings.json
 │   ├── skills/
 │   └── agents/
+├── lessons/          # shared lessons, one file per topic or tool
+├── AGENTS.local.md   # workflow rules for any agent
 ├── .gitignore
 └── README.md
 ```
+
+The repo must live at `~/src/coastal/ai-dotfiles`. `.claude/CLAUDE.md` imports
+`AGENTS.local.md` and `lessons/general.md` with `@~/src/coastal/ai-dotfiles/...`
+paths, and `AGENTS.local.md` points to `lessons/` the same way.
 
 Only configuration files intentionally managed by this repository are tracked.
 
@@ -36,8 +42,8 @@ Only configuration files intentionally managed by this repository are tracked.
 ### 1. Clone the repository
 
 ```bash
-mkdir -p ~/src
-git clone git@github.com:YOUR_USERNAME/ai-dotfiles.git ~/src/ai-dotfiles
+mkdir -p ~/src/coastal
+git clone git@github.com:YOUR_USERNAME/ai-dotfiles.git ~/src/coastal/ai-dotfiles
 ```
 
 ### 2. Create configuration directories
@@ -51,8 +57,12 @@ mkdir -p ~/.claude
 Back up any existing configuration files before creating symbolic links.
 
 ```bash
-ln -s ~/src/ai-dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
-ln -s ~/src/ai-dotfiles/.claude/rules ~/.claude/rules
+ln -s ~/src/coastal/ai-dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/src/coastal/ai-dotfiles/.claude/rules ~/.claude/rules
+mkdir -p ~/.claude/skills
+ln -s ~/src/coastal/ai-dotfiles/.claude/skills/creating-rules ~/.claude/skills/creating-rules
+ln -s ~/src/coastal/ai-dotfiles/.claude/skills/new-plan ~/.claude/skills/new-plan
+ln -s ~/src/coastal/ai-dotfiles/.claude/skills/capture-lesson ~/.claude/skills/capture-lesson
 ```
 
 Link additional configuration files or directories as they are added to the repository.
@@ -60,10 +70,10 @@ Link additional configuration files or directories as they are added to the repo
 ### 4. Verify installation
 
 ```bash
-ls -l ~/.claude/CLAUDE.md ~/.claude/rules
+ls -l ~/.claude/CLAUDE.md ~/.claude/rules ~/.claude/skills/
 ```
 
-The symbolic links should point to files within `~/src/ai-dotfiles/`.
+The symbolic links should point to files within `~/src/coastal/ai-dotfiles/`.
 
 ## Configuration Management
 
@@ -74,7 +84,7 @@ Changes made through the symbolic links are reflected directly in the repository
 To commit and publish changes:
 
 ```bash
-cd ~/src/ai-dotfiles
+cd ~/src/coastal/ai-dotfiles
 git add .
 git commit -m "Update AI configuration"
 git push
@@ -83,7 +93,7 @@ git push
 To synchronize changes on another machine:
 
 ```bash
-cd ~/src/ai-dotfiles
+cd ~/src/coastal/ai-dotfiles
 git pull
 ```
 

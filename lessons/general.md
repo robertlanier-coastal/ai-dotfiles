@@ -1,0 +1,57 @@
+---
+name: general
+description: How to work with the user on any project. Sources, writing style, and process.
+read_when: Always. Read at the start of every session.
+---
+
+# General lessons
+
+## Writing style
+
+- Do: write for a neurodivergent audience. Short sentences, one idea each.
+  Common words. Define technical terms on first use. Prefer lists to long
+  paragraphs. No idioms. No em dashes.
+  Why: applies to tickets, docs, PR descriptions, and messages for every client.
+
+## Sources and claims
+
+- Do: say where every recommendation comes from (user message, repo file,
+  query result, or my own suggestion).
+  Do not: imply a pattern came from the repo when I have not read the files.
+  Why: the user asked if a design was based on a repo folder I had not read.
+- Do: read a referenced repo folder before calling it a model to follow.
+- Do: recount lists before quoting a count (for example, column counts).
+  Why: a wrong column count was quoted for many turns.
+
+## Design
+
+- Do not: copy a folder structure only to match an existing folder.
+  Do: add structure only when the work needs it (for example, logic used in
+  two or more places).
+
+## Process
+
+- Do: write commit messages that are simple, clear, and direct. One short
+  subject line. Add a body only if it is really needed.
+  Why: the user asked for this.
+- Do: before writing a phase's file, check in with the user. List the design
+  choices (filters, columns kept or dropped, optimizations). Then write it.
+  Do not: add optimizations (for example, removing zero rows) without asking.
+  Why: design choices were made without a check-in, which breaks "Verify Plan".
+- Do: ask before creating files when the location or structure is not decided.
+- Do not: create, move (`git mv`), or edit repo files when the user says they
+  will make the changes.
+  Do: give step-by-step instructions one file at a time. Review each file after
+  the user saves it.
+  Why: the user wanted to copy their own work and follow a reviewer's steps.
+- Do: when a review points to another open PR, ask how to use it before
+  branching off it.
+  Why: the user chose to copy one block from the other PR, not to branch from it.
+- Do: check `.gitignore` before suggesting where local files go.
+- Do: write any script an agent or skill runs in Python. Run it with `uv run`.
+  Do not: write agent scripts in shell.
+  Why: the user asked for this.
+- Do: tell the user the token cost before starting test subagents.
+  Each fresh subagent costs about 130k tokens, mostly its base context, even
+  for a few tool calls.
+  Why: skill tests used four subagents at about 130k tokens each.

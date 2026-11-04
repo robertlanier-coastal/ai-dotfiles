@@ -1,4 +1,4 @@
-# Claude Code — Global Preferences
+# Claude Code: Global Preferences
 
 ## Who I am
 
@@ -19,9 +19,9 @@
 
 - **Shell:** Zsh with Starship prompt, zoxide, fzf
 - **No Admin Access:** User Tools installed locally or within `~/.local/bin`
-- **Containers:** Podman Not Docker — use `podman` in commands, not `docker`.
+- **Containers:** Podman, not Docker. Use `podman` in commands, not `docker`.
 - **Config standard:** XDG Base Directory Spec. Configs go in `~/.config/`, not bare `~/`.
-- **Git Repos:** Live under `~/src/project`
+- **Git Repos:** Live under `~/src/<org>/<repo>` (for example `~/src/coastal/ai-dotfiles`)
 
 ## Tools and Systems
 
@@ -56,3 +56,8 @@
 - Use `|---|---|` separator style for Markdown tables (compact, MD060 disabled).
 - No time estimates in documentation: they deter engineers from reading.
 - Do not use the em-dash character (`—`) in any document, post, README, CONTRIBUTING file, or written communication. Restructure the sentence to use a comma, colon, or semicolon instead.
+
+## Workflow
+
+@~/src/coastal/ai-dotfiles/AGENTS.local.md
+@~/src/coastal/ai-dotfiles/lessons/general.md

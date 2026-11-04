@@ -19,7 +19,7 @@
 - After ANY correction from the user: capture the lesson (see Task Management, step 6)
 - Write rules for yourself that prevent the same mistake
 - Ruthlessly iterate on these lessons until mistake rate drops
-- Review lessons at session start for relevant project
+- Follow Session Start.
 
 ### 4. Verification Before Done
 
@@ -38,27 +38,41 @@
 ## Task Management
 
 Plans are for the agent to follow. Each plan has a short name (for example
-`rlp_revenue_metrics`). Use that name in every file for the plan.
+`deposit_trends`). Use that name in every file for the plan.
 
-1. **Plan First**: Write the plan as two parts in `.agents/tasks/`:
-   - `<plan_name>.todo.md`: the checklist. One checkable item per phase,
-     plus a Review section at the end.
-   - `<plan_name>/`: one guide file per phase (`00_overview.md`,
-     `01_<phase>.md`, ...). Each file has: Description, Work, SQL or
-     commands, Done when, and a Results log.
+The active plan is the one the user names. If none is named, list
+`.agents/plans/` and ask.
+
+1. **Plan First**: After the user approves a plan (including a plan-mode
+   draft), use the `new-plan` skill. It creates `.agents/plans/<plan_name>/`
+   with `todo.md` and one guide file per phase. Optional: a `reference/`
+   folder for source notes and samples.
 2. **Verify Plan**: Check in with the user before starting implementation,
-   and before each phase that creates or changes any objects.
-3. **Track Progress**: Mark items complete in `<plan_name>.todo.md`, and
-   write results in the phase file's Results log.
-4. **Explain Changes**: High-level summary at each step.
-5. **Document Results**: Add a Review section to `<plan_name>.todo.md`.
-6. **Capture Lessons**: After ANY correction from the user, write the lesson down:
-   - If it applies to any work in this repo, add it to `.agents/tasks/lessons.md`.
-   - If it applies only to one plan, add it to `.agents/tasks/<plan_name>.lessons.md`.
-   - Write each lesson as a rule: "Do X" or "Do not do Y", plus one line on why.
-   - If a plan lesson turns out to apply everywhere, move it to `lessons.md`.
-   At session start, read `lessons.md`, and the `.lessons.md` file for the
-   active plan.
+   and before each phase that creates or changes any objects.
+3. **Track Progress**: Mark items complete in `todo.md`, and write results in
+   the phase file's Results log.
+4. **Explain Changes**: One or two lines on what changed and why. Lead with
+   the point. No recap of steps.
+5. **Document Results**: Add a Review section to `todo.md`.
+6. **Capture Lessons**: After ANY correction from the user, use the
+   `capture-lesson` skill. It writes the lesson at the narrowest level that
+   fits: this plan, this repo, or the shared lessons in
+   `~/src/coastal/ai-dotfiles/lessons/`. Lesson files are the source of
+   truth. Do not save workflow lessons to Claude Code auto memory.
+
+If skills are not available (for example in CoCo), read the skill's `SKILL.md`
+in `~/src/coastal/ai-dotfiles/.claude/skills/<skill>/` and follow it.
+
+## Session Start
+
+`~` is the user's home folder.
+
+1. Read `~/src/coastal/ai-dotfiles/lessons/general.md`. Skip this step if it
+   is already loaded (Claude Code imports it through `CLAUDE.md`).
+2. Run `uv run ~/src/coastal/ai-dotfiles/.claude/skills/capture-lesson/scripts/lesson_files.py list`.
+   Read each file whose `read_when` matches the task.
+3. Read `.agents/lessons.md` in the current repo, if it exists.
+4. Read `.agents/plans/<plan_name>/lessons.md` for the active plan, if it exists.
 
 ## Core Principles
 
