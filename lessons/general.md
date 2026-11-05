@@ -48,6 +48,10 @@ read_when: Always. Read at the start of every session.
   `main`. In client or project repos, never commit or push to `main`: use a
   branch and a pull request.
   Why: the user set this rule. The global CLAUDE.md has the same rule.
+- Do: in PRs, comments and tickets, group commits by their Jira sub-task key
+  (for example "CCFIN4-143 commits").
+  Do not: call them "Phase 1 commits". Plan phases are internal.
+  Why: the user asked for this.
 - Do: before writing a phase's file, check in with the user. List the design
   choices (filters, columns kept or dropped, optimizations). Then write it.
   Do not: add optimizations (for example, removing zero rows) without asking.

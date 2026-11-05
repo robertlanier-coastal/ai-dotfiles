@@ -46,4 +46,13 @@ Also follow the writing style in `general.md`.
   a client update.
   Why: the user wants to explain why the work was done, how much work it
   took, and what was delivered, not only what was changed.
+- Do: write sub-task descriptions as: What (bullets), Why (bullets), Tasks
+  (Jira checkbox list). Put the checks that prove the result at the end of
+  Tasks. No "Done When" section and no task numbers. Stories use their own
+  format. The user ticks the boxes; never change checkbox state.
+  Why: the user set this format to avoid a separate, overlapping Done list.
+- Do: write checkboxes as an ADF `taskList` (contentFormat "adf").
+  Do not: send `- [ ]` with contentFormat "markdown"; it becomes plain text
+  and removes existing checkboxes.
+  Why: a markdown edit turned real checkboxes into escaped text.
 
