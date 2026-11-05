@@ -20,9 +20,9 @@ and lives where the next agent will read it.
 1. **Write the rule.** One idea per rule, in this format:
 
    ```markdown
-   - Do: <what to do>.
-     Do not: <what to avoid>.   (only if it adds something)
-     Why: <one line: the reason or what went wrong>.
+   - **Do:** <what to do>.
+     **Do not:** <what to avoid>.   (only if it adds something)
+     **Why:** <one line: the reason or what went wrong>.
    ```
 
    For a correction, base it on what the user actually said. Do not widen it

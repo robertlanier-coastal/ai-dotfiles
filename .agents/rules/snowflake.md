@@ -10,7 +10,7 @@ paths:
 
 These rules do not apply to dbt models.
 
-- Do: follow Snowflake SQL standards and best practices when writing SQL.
-- Do: reuse logic by building objects that read from each other.
-  Do not: copy the same logic into several scripts.
-  Why: plain SQL scripts cannot include other files. A folder does not stop repetition.
+- **Do:** follow Snowflake SQL standards and best practices when writing SQL.
+- **Do:** reuse logic by building objects that read from each other.
+  **Do not:** copy the same logic into several scripts.
+  **Why:** plain SQL scripts cannot include other files. A folder does not stop repetition.

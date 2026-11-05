@@ -8,5 +8,5 @@ paths:
 
 # Python rules
 
-- Do: reuse logic by building functions or modules that call each other.
-  Do not: copy the same logic into several places.
+- **Do:** reuse logic by building functions or modules that call each other.
+  **Do not:** copy the same logic into several places.
