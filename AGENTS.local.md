@@ -74,6 +74,15 @@ in `~/src/coastal/ai-dotfiles/.claude/skills/<skill>/` and follow it.
 3. Read `.agents/lessons.md` in the current repo, if it exists.
 4. Read `.agents/plans/<plan_name>/lessons.md` for the active plan, if it exists.
 
+## Git
+
+- **Client or project repos:** Never commit or push to `main`. Always commit
+  to a feature or fix branch and open a pull request.
+- **Personal repos (for example `~/src/coastal/ai-dotfiles`):** Ask the user,
+  then commit and push to `main`.
+- **Review first:** Make each task's change and leave it uncommitted. Show the
+  diff, wait for the user's go-ahead, then commit. Push when a phase is done.
+
 ## Core Principles
 
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
