@@ -32,9 +32,11 @@ Also follow the writing style in `general.md`.
   any package or term in a few words. Skip a section if it is empty.
   Do not: use plan phase or task numbers in the comment.
   Why: the user liked this format for subtask comments and standups at every client.
-- Do: in every dev ticket (story and sub-task), add a "Why" section above
-  "What". Say the problem, and how the work helps the client. Keep it to 1 to
-  3 plain bullets.
+- Do: in every dev ticket (story and sub-task), add a "Why" section. Say the
+  problem, and how the work helps the client. Keep it to 1 to 3 plain bullets.
+  Sub-tasks: at the top of the Description, above "What". Stories have no
+  Description (Key details has the tabs Field, Notes, Testing, Waves): put the
+  Why at the top of Design Notes on the Notes tab.
   Do: in the closing comment, say what the finished result is and what the
   work took (number of commits, files, checks run), so it can feed a demo or
   a client update.
