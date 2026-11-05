@@ -73,3 +73,7 @@ read_when: Always. Read at the start of every session.
   Each fresh subagent costs about 130k tokens, mostly its base context, even
   for a few tool calls.
   Why: skill tests used four subagents at about 130k tokens each.
+- Do: name skills with a verb first that says what they do (for example
+  `create-jira-story`, not `jira-story`).
+  Why: the user asked for this.
+

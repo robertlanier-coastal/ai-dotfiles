@@ -16,13 +16,12 @@ Also follow the writing style in `general.md`.
   Do not: add business owner sign-off or approvals to AC.
   Why: AC must be verifiable by the engineer. Approvals are tracked elsewhere.
 - Do: when an AC is based on a sample or reference object, say so in the AC text.
-- Do: put only SQL queries in the Testing tab (Steps to Test) for tickets
-  that change data.
-  Do not: add file checks, lint, or PR approval as test steps on those tickets.
-  Why: those are checked visually. The Testing tab is for runnable SQL.
-- Do: for CI/CD pipeline tickets, use local tool runs (for example actionlint
-  and act) as test steps.
-  Why: pipelines change no data, so SQL cannot test them.
+- Do: write Steps to Test (Testing tab) as runnable checks that match what was
+  built: SQL for data changes, Python or shell commands for scripts, local
+  tool runs (for example actionlint and act) for CI/CD.
+  Do not: add file checks, lint-only steps, or PR approval as test steps.
+  Leave "Assigned tester" empty.
+  Why: the user said tests depend on what is being developed.
 - Do: in Design Notes, say what we use and why.
   Do not: name tools we chose not to use.
   Why: the user asked to remove a rejected option from the notes.
@@ -56,3 +55,7 @@ Also follow the writing style in `general.md`.
   and removes existing checkboxes.
   Why: a markdown edit turned real checkboxes into escaped text.
 
+
+- Do: start sub-task titles with a verb, short and plain (for example
+  "Upgrade dbt and Snowflake CLI").
+  Why: the title should say at a glance what the sub-task does.
