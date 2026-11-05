@@ -63,6 +63,8 @@ mkdir -p ~/.claude/skills
 ln -s ~/src/coastal/ai-dotfiles/.claude/skills/creating-rules ~/.claude/skills/creating-rules
 ln -s ~/src/coastal/ai-dotfiles/.claude/skills/new-plan ~/.claude/skills/new-plan
 ln -s ~/src/coastal/ai-dotfiles/.claude/skills/capture-lesson ~/.claude/skills/capture-lesson
+ln -s ~/src/coastal/ai-dotfiles/.claude/skills/create-jira-story ~/.claude/skills/create-jira-story
+ln -s ~/src/coastal/ai-dotfiles/.claude/skills/write-jira-comment ~/.claude/skills/write-jira-comment
 ```
 
 Link additional configuration files or directories as they are added to the repository.
