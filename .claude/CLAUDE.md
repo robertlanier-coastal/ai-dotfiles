@@ -42,7 +42,7 @@
 - **Shell:** ShellCheck-clean.
 - **GitHub CLI access** `gh`
 - **Default branch:** `main`.
-- **Commit and push rules:** See the Git section in `AGENTS.local.md`.
+- **Commit and push rules:** See the Git section in `~/src/coastal/ai-dotfiles/.agents/AGENTS.md`.
 - **Git Branch naming:** `<type>/<Jira ticket>-<description>`
 - **Always Use Conventional Commits format.**
 - **Pull strategy:** rebase.
@@ -59,4 +59,4 @@
 
 ## Workflow
 
-@~/src/coastal/ai-dotfiles/AGENTS.local.md
+@~/src/coastal/ai-dotfiles/.agents/AGENTS.md

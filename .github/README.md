@@ -24,18 +24,18 @@ ai-dotfiles/
 │   ├── rules -> ../.agents/rules
 │   └── skills -> ../.agents/skills
 ├── .agents/
+│   ├── AGENTS.md     # workflow rules for any agent
 │   ├── rules/        # shared rules, one file per topic or tool
 │   ├── skills/       # shared skills (Agent Skills format, SKILL.md)
 │   └── plans/        # local plans, ignored by git
 ├── .github/
 │   └── README.md
-├── AGENTS.local.md   # workflow rules for any agent
 └── .gitignore
 ```
 
 The repo must live at `~/src/coastal/ai-dotfiles`. `.claude/CLAUDE.md` imports
-`AGENTS.local.md` with an `@~/src/coastal/ai-dotfiles/...` path. Claude Code
-loads the shared rules through `~/.claude/rules`, and `AGENTS.local.md` points
+`.agents/AGENTS.md` with an `@~/src/coastal/ai-dotfiles/...` path. Claude Code
+loads the shared rules through `~/.claude/rules`, and `.agents/AGENTS.md` points
 other agents to `.agents/rules/`.
 
 Only configuration files intentionally managed by this repository are tracked.
