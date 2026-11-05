@@ -54,8 +54,6 @@ Also follow the writing style in `general.md`.
   Do not: send `- [ ]` with contentFormat "markdown"; it becomes plain text
   and removes existing checkboxes.
   Why: a markdown edit turned real checkboxes into escaped text.
-
-
 - Do: start sub-task titles with a verb, short and plain (for example
   "Upgrade dbt and Snowflake CLI").
   Why: the title should say at a glance what the sub-task does.
