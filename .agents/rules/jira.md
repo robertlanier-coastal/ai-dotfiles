@@ -61,3 +61,9 @@ Also follow the writing style in `general.md`.
 - **Do:** start sub-task titles with a verb, short and plain (for example
   "Upgrade dbt and Snowflake CLI").
   **Why:** the title should say at a glance what the sub-task does.
+- **Do:** make each Tasks item name the file or place it changes when two tasks
+  look alike (for example "in the PR check workflow (`ci.yml`)" vs. "in
+  `requirements.txt`").
+  **Why:** the user removed a vague task ("SQLFluff 4.5.0") because it looked like
+  a duplicate of the next one.
+
