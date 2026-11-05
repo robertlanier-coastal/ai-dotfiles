@@ -34,6 +34,12 @@ read_when: Always. Read at the start of every session.
 - Do: write commit messages that are simple, clear, and direct. One short
   subject line. Add a body only if it is really needed.
   Why: the user asked for this.
+- Do: use one pull request per story. Split each phase (or sub-task) into
+  small, simple, logical tasks. Each task is one commit. Write a draft
+  Conventional Commits message for each task in the plan's `todo.md`.
+  Do not: plan one commit per phase or per sub-task.
+  Why: small commits let reviewers read the pull request one commit at a
+  time, and let any one change be rolled back.
 - Do: before writing a phase's file, check in with the user. List the design
   choices (filters, columns kept or dropped, optimizations). Then write it.
   Do not: add optimizations (for example, removing zero rows) without asking.
