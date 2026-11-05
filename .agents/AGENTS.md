@@ -72,8 +72,9 @@ in `<ai-dotfiles>/.agents/skills/<skill>/` and follow it.
 `<ai-dotfiles>` is the folder where this repo is cloned. On the user's Mac it
 is `~/src/coastal/ai-dotfiles`. On other machines, ask the user if unsure.
 
-1. Read `<ai-dotfiles>/.agents/rules/general.md`. Skip this step
-   in Claude Code: it loads shared rules from `~/.claude/rules` by itself.
+1. Read `<ai-dotfiles>/.agents/rules/general.md`. Skip this step only if
+   the rules are already loaded (Claude Code on the user's Mac loads them
+   from `~/.claude/rules`).
 2. Run `uv run <ai-dotfiles>/.agents/skills/write-rule/scripts/rule_files.py list`
    (without uv: read the frontmatter of `<ai-dotfiles>/.agents/rules/*.md`).
    Read each file whose `read_when` matches the task (Claude Code: only files
