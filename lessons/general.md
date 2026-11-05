@@ -40,6 +40,14 @@ read_when: Always. Read at the start of every session.
   Do not: plan one commit per phase or per sub-task.
   Why: small commits let reviewers read the pull request one commit at a
   time, and let any one change be rolled back.
+- Do: make each task's change and leave it uncommitted. Show the diff and
+  wait for the user's go-ahead. Then commit. Push only when a whole phase is done.
+  Do not: commit before the user has reviewed the change.
+  Why: the user wants to review every change before it is committed.
+- Do: in personal repos (such as `ai-dotfiles`), ask, then commit and push to
+  `main`. In client or project repos, never commit or push to `main`: use a
+  branch and a pull request.
+  Why: the user set this rule. The global CLAUDE.md has the same rule.
 - Do: before writing a phase's file, check in with the user. List the design
   choices (filters, columns kept or dropped, optimizations). Then write it.
   Do not: add optimizations (for example, removing zero rows) without asking.
