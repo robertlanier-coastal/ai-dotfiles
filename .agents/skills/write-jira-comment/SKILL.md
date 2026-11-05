@@ -5,7 +5,7 @@ description: Drafts a short Jira progress comment in the team format (Completed,
 
 # Write a Jira progress comment
 
-Read the shared lessons `lessons/jira.md` and `lessons/general.md` first.
+Read the shared rules `.agents/rules/jira.md` and `.agents/rules/general.md` in `ai-dotfiles` first.
 
 ## Steps
 

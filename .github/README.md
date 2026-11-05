@@ -21,22 +21,23 @@ Additional tools may be added as needed.
 ai-dotfiles/
 ├── .claude/
 │   ├── CLAUDE.md
-│   ├── rules/
+│   ├── rules -> ../.agents/rules
 │   ├── settings.json
 │   ├── skills -> ../.agents/skills
 │   └── agents/
 ├── .agents/
+│   ├── rules/        # shared rules, one file per topic or tool
 │   ├── skills/       # shared skills (Agent Skills format, SKILL.md)
 │   └── plans/        # local plans, ignored by git
-├── lessons/          # shared lessons, one file per topic or tool
 ├── AGENTS.local.md   # workflow rules for any agent
 ├── .gitignore
 └── README.md
 ```
 
 The repo must live at `~/src/coastal/ai-dotfiles`. `.claude/CLAUDE.md` imports
-`AGENTS.local.md` and `lessons/general.md` with `@~/src/coastal/ai-dotfiles/...`
-paths, and `AGENTS.local.md` points to `lessons/` the same way.
+`AGENTS.local.md` with an `@~/src/coastal/ai-dotfiles/...` path. Claude Code
+loads the shared rules through `~/.claude/rules`, and `AGENTS.local.md` points
+other agents to `.agents/rules/`.
 
 Only configuration files intentionally managed by this repository are tracked.
 
@@ -63,9 +64,8 @@ Back up any existing configuration files before creating symbolic links.
 ln -s ~/src/coastal/ai-dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -s ~/src/coastal/ai-dotfiles/.claude/rules ~/.claude/rules
 mkdir -p ~/.claude/skills
-ln -s ~/src/coastal/ai-dotfiles/.agents/skills/creating-rules ~/.claude/skills/creating-rules
 ln -s ~/src/coastal/ai-dotfiles/.agents/skills/new-plan ~/.claude/skills/new-plan
-ln -s ~/src/coastal/ai-dotfiles/.agents/skills/capture-lesson ~/.claude/skills/capture-lesson
+ln -s ~/src/coastal/ai-dotfiles/.agents/skills/write-rule ~/.claude/skills/write-rule
 ln -s ~/src/coastal/ai-dotfiles/.agents/skills/create-jira-story ~/.claude/skills/create-jira-story
 ln -s ~/src/coastal/ai-dotfiles/.agents/skills/write-jira-comment ~/.claude/skills/write-jira-comment
 ```

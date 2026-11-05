@@ -17,9 +17,9 @@
 
 ### 3. Self-Improvement Loop
 
-- After ANY correction from the user: capture the lesson (see Task Management, step 6)
+- After ANY correction from the user, turn the lesson learned into a rule with the `write-rule` skill (see Task Management, step 6)
 - Write rules for yourself that prevent the same mistake
-- Ruthlessly iterate on these lessons until mistake rate drops
+- Ruthlessly iterate on these rules until mistake rate drops
 - Follow Session Start.
 
 ### 4. Verification Before Done
@@ -55,11 +55,12 @@ The active plan is the one the user names. If none is named, list
 4. **Explain Changes**: One or two lines on what changed and why. Lead with
    the point. No recap of steps.
 5. **Document Results**: Add a Review section to `todo.md`.
-6. **Capture Lessons**: After ANY correction from the user, use the
-   `capture-lesson` skill. It writes the lesson at the narrowest level that
-   fits: this plan, this repo, or the shared lessons in
-   `~/src/coastal/ai-dotfiles/lessons/`. Lesson files are the source of
-   truth. Do not save workflow lessons to Claude Code auto memory.
+6. **Write Rules**: After ANY correction from the user, turn the lesson
+   learned into a rule with the `write-rule` skill. Use it too when the user
+   asks for a new rule. It writes the rule at the narrowest level that fits:
+   this plan, this repo, or the shared rules in
+   `~/src/coastal/ai-dotfiles/.agents/rules/`. Rule files are the source of
+   truth. Do not save workflow rules to Claude Code auto memory.
 
 For Jira stories, sub-tasks and progress comments, use the `create-jira-story`
 and `write-jira-comment` skills.
@@ -71,12 +72,13 @@ in `~/src/coastal/ai-dotfiles/.agents/skills/<skill>/` and follow it.
 
 `~` is the user's home folder.
 
-1. Read `~/src/coastal/ai-dotfiles/lessons/general.md`. Skip this step if it
-   is already loaded (Claude Code imports it through `CLAUDE.md`).
-2. Run `uv run ~/src/coastal/ai-dotfiles/.agents/skills/capture-lesson/scripts/lesson_files.py list`.
-   Read each file whose `read_when` matches the task.
-3. Read `.agents/lessons.md` in the current repo, if it exists.
-4. Read `.agents/plans/<plan_name>/lessons.md` for the active plan, if it exists.
+1. Read `~/src/coastal/ai-dotfiles/.agents/rules/general.md`. Skip this step
+   in Claude Code: it loads shared rules from `~/.claude/rules` by itself.
+2. Run `uv run ~/src/coastal/ai-dotfiles/.agents/skills/write-rule/scripts/rule_files.py list`.
+   Read each file whose `read_when` matches the task (Claude Code: only files
+   it has not loaded already).
+3. Read `.agents/rules.md` in the current repo, if it exists.
+4. Read `.agents/plans/<plan_name>/rules.md` for the active plan, if it exists.
 
 ## Git
 

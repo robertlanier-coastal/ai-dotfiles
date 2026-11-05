@@ -60,4 +60,3 @@
 ## Workflow
 
 @~/src/coastal/ai-dotfiles/AGENTS.local.md
-@~/src/coastal/ai-dotfiles/lessons/general.md

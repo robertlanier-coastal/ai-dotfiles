@@ -6,7 +6,7 @@ description: Drafts a Coastal Jira story and its sub-tasks in the team format, r
 # Create a Jira story
 
 Every story and sub-task follows the format in `references/format.md`. Read it
-first. Also read the shared lessons `lessons/jira.md` and `lessons/general.md`.
+first. Also read the shared rules `.agents/rules/jira.md` and `.agents/rules/general.md` in `ai-dotfiles`.
 
 Nothing is created in Jira until the user approves the full draft.
 
