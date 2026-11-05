@@ -58,22 +58,24 @@ The active plan is the one the user names. If none is named, list
    learned into a rule with the `write-rule` skill. Use it too when the user
    asks for a new rule. It writes the rule at the narrowest level that fits:
    this plan, this repo, or the shared rules in
-   `~/src/coastal/ai-dotfiles/.agents/rules/`. Rule files are the source of
+   `<ai-dotfiles>/.agents/rules/`. Rule files are the source of
    truth. Do not save workflow rules to Claude Code auto memory.
 
 For Jira stories, sub-tasks and progress comments, use the `create-jira-story`
 and `write-jira-comment` skills.
 
 If skills are not available (for example in CoCo), read the skill's `SKILL.md`
-in `~/src/coastal/ai-dotfiles/.agents/skills/<skill>/` and follow it.
+in `<ai-dotfiles>/.agents/skills/<skill>/` and follow it.
 
 ## Session Start
 
-`~` is the user's home folder.
+`<ai-dotfiles>` is the folder where this repo is cloned. On the user's Mac it
+is `~/src/coastal/ai-dotfiles`. On other machines, ask the user if unsure.
 
-1. Read `~/src/coastal/ai-dotfiles/.agents/rules/general.md`. Skip this step
+1. Read `<ai-dotfiles>/.agents/rules/general.md`. Skip this step
    in Claude Code: it loads shared rules from `~/.claude/rules` by itself.
-2. Run `uv run ~/src/coastal/ai-dotfiles/.agents/skills/write-rule/scripts/rule_files.py list`.
+2. Run `uv run <ai-dotfiles>/.agents/skills/write-rule/scripts/rule_files.py list`
+   (without uv: read the frontmatter of `<ai-dotfiles>/.agents/rules/*.md`).
    Read each file whose `read_when` matches the task (Claude Code: only files
    it has not loaded already).
 3. Read `.agents/rules.md` in the current repo, if it exists.
@@ -90,7 +92,7 @@ in `~/src/coastal/ai-dotfiles/.agents/skills/<skill>/` and follow it.
 - **Client or project repos, review first:** Make each task's change and leave
   it uncommitted. Show the diff, wait for the user's go-ahead, then commit.
   Push when a phase or sub-task is done.
-- **Personal repos (for example `~/src/coastal/ai-dotfiles`):** Always ask
+- **Personal repos (for example `ai-dotfiles`):** Always ask
   first. Users differ, so offer the choice: review each diff first, or commit
   and push to `main` directly. Ask clarifying questions until the request is clear.
 

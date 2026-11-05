@@ -2,7 +2,7 @@
 name: write-rule
 description: >
   Writes a rule at the right level: this plan, this repo, or the shared rules in
-  ~/src/coastal/ai-dotfiles/.agents/rules/. Use when the user asks to create, add,
+  ai-dotfiles (.agents/rules/). Use when the user asks to create, add,
   or write a rule; after ANY correction from the user, to turn the lesson learned
   into a rule ("no, do it this way", "don't do that", "I told you"); when the user
   says "remember this", "add a lesson", or "don't do that again"; and when a rule
@@ -35,10 +35,11 @@ and lives where the next agent will read it.
    |---|---|---|
    | Plan | `.agents/plans/<plan_name>/rules.md` | Decisions and scope that only matter for this plan |
    | Repo | `.agents/rules.md` | This client's conventions and people, and facts about its source systems (code values, what a table or column means). Other plans at this client need these too |
-   | Shared | `~/src/coastal/ai-dotfiles/.agents/rules/<topic>.md` | Would help at a different client |
+   | Shared | `<ai-dotfiles>/.agents/rules/<topic>.md` | Would help at a different client |
 
    Test: "Would this help at another client?" If yes, shared. If unsure, ask
-   the user. `~` is the user's home folder.
+   the user. `<ai-dotfiles>` is the folder where the `ai-dotfiles` repo is
+   cloned (this skill lives in `<ai-dotfiles>/.agents/skills/write-rule/`).
 
 3. **For shared rules, remove client details.** The `ai-dotfiles` repo is
    pushed to GitHub and used at every client. Remove client and company names,
@@ -46,12 +47,12 @@ and lives where the next agent will read it.
    and internal URLs. Rewrite the Why line in general terms.
 
 4. **Pick the shared file.** Run
-   `uv run ~/src/coastal/ai-dotfiles/.agents/skills/write-rule/scripts/rule_files.py list`
+   `uv run scripts/rule_files.py list` from this skill's folder
    and match on `description`, `read_when`, and `paths`. Use a tool file
    (`snowflake.md`, `python.md`, `jira.md`, ...) for tool-specific rules,
    `data-modeling.md` for tool-neutral modeling, and `general.md` for how to
    work with the user. If a new topic has no file, create it with
-   `uv run ~/src/coastal/ai-dotfiles/.agents/skills/write-rule/scripts/rule_files.py new <tool> --read-when "<when to read it>" [--paths "<glob>" ...]`.
+   `uv run scripts/rule_files.py new <tool> --read-when "<when to read it>" [--paths "<glob>" ...]`.
 
 5. **Decide how it loads.** Shared rule files have two loaders:
    - `read_when` (required): any agent reads the file when the task matches.
