@@ -52,8 +52,7 @@ The active plan is the one the user names. If none is named, list
    and before each phase that creates or changes any objects.
 3. **Track Progress**: Mark items complete in `todo.md`, and write results in
    the phase file's Results log.
-4. **Explain Changes**: One or two lines on what changed and why. Lead with
-   the point. No recap of steps.
+4. **Explain Changes**: Say what changed and why.
 5. **Document Results**: Add a Review section to `todo.md`.
 6. **Write Rules**: After ANY correction from the user, turn the lesson
    learned into a rule with the `write-rule` skill. Use it too when the user
@@ -82,6 +81,10 @@ in `~/src/coastal/ai-dotfiles/.agents/skills/<skill>/` and follow it.
 
 ## Git
 
+- **Default branch:** `main`.
+- **Branch naming:** `<type>/<Jira ticket>-<description>`.
+- **Commit messages:** Conventional Commits.
+- **Pull strategy:** rebase.
 - **Client or project repos:** Never commit or push to `main`. Always commit
   to a feature or fix branch and open a pull request.
 - **Client or project repos, review first:** Make each task's change and leave
@@ -96,4 +99,17 @@ in `~/src/coastal/ai-dotfiles/.agents/skills/<skill>/` and follow it.
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
 - **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
-- **Use uv for Package Management**: Use uv for all package management; do not use pip.
+- **Python**: Use `uv` for projects and package management, not pip. Lint with Ruff.
+
+## Code
+
+- Add simple docstrings to functions and classes.
+- Add simple comments above lines of code.
+- Do not add abstractions beyond what the task needs.
+- Do not add error handling for things that cannot happen.
+- Shell scripts are ShellCheck-clean.
+
+## Documentation
+
+- Use `|---|---|` separators in Markdown tables.
+- No time estimates in documentation: they deter engineers from reading.
