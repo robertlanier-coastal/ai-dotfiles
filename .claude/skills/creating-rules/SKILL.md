@@ -98,6 +98,12 @@ facts" not "do these in order."
 1. Determine scope: should this load globally or only for specific file types?
 2. Choose a descriptive filename that reflects the topic.
 3. Write the rule file — global rules need no frontmatter; scoped rules need `paths:`.
-4. Place the file in `.claude/rules/` (project-level) or `~/.claude/rules/` (user-level, applies to all projects).
+4. Place the file:
+   - **User-level (all projects):** `~/.claude/rules/`, which is a symlink to
+     `~/src/coastal/ai-dotfiles/.claude/rules/`. Commit and push it in
+     `ai-dotfiles`. First check `ai-dotfiles/lessons/`: rules that any agent
+     should follow belong in a lesson there, not in a rule.
+   - **Project-level:** `.claude/rules/` in the current repo. In a client repo,
+     only when the user asks.
 5. Update any references to rule files in `CLAUDE.md` so the index stays accurate.
 6. Verify the file loads with `/context` in a new session.
