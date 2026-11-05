@@ -4,7 +4,7 @@ description: Jira ticket standards for the Coastal Snowflake Team.
 read_when: Writing or editing a Jira story, sub-task, or comment.
 ---
 
-# Jira lessons
+# Jira rules
 
 Also follow the writing style in `general.md`.
 

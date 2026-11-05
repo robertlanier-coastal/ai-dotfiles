@@ -4,7 +4,7 @@ description: How to work with the user on any project. Sources, writing style, a
 read_when: Always. Read at the start of every session.
 ---
 
-# General lessons
+# General rules
 
 ## Writing style
 
@@ -36,7 +36,7 @@ read_when: Always. Read at the start of every session.
   Do not: report false positives, or report an unverified finding as fact.
   If a check is not possible (no network, no runtime), say so: "unverified:
   could not check X".
-  Why: moved from `.claude/rules/verify-findings.md` so lessons are the single source.
+  Why: moved from `.claude/rules/verify-findings.md` so rules have a single source.
 
 ## Design
 

@@ -1,10 +1,12 @@
 ---
 name: snowflake
-description: Lessons for hand-written Snowflake SQL.
+description: Rules for hand-written Snowflake SQL.
 read_when: Writing or reviewing Snowflake SQL outside dbt models.
+paths:
+  - "**/*.sql"
 ---
 
-# Snowflake lessons
+# Snowflake rules
 
 These rules do not apply to dbt models.
 
