@@ -5,7 +5,11 @@ Usage: uv run build_adf.py <input.json>
 Input JSON:
   {"what": ["line", ...],
    "why": ["line", ["line with sub-bullets", ["sub", ...]], ...],
-   "tasks": ["task", ...]}
+   "files": ["`path/to/file`", ...],
+   "tasks": ["task", {"text": "task", "done": true}, ...]}
+
+A task is a string (unticked), or an object with "done" to keep an existing
+tick when rewriting a ticket. New tickets start with every task unticked.
 
 Lines may use `code` spans and [label](url) links. Prints the ADF document.
 """
@@ -55,20 +59,19 @@ def bullets(items: list) -> dict:
     return {"type": "bulletList", "content": out}
 
 
-def tasks(items: list[str]) -> dict:
-    """Task list with every item unticked. The user ticks the boxes."""
-    return {
-        "type": "taskList",
-        "attrs": {"localId": str(uuid.uuid4())},
-        "content": [
-            {"type": "taskItem", "attrs": {"localId": str(uuid.uuid4()), "state": "TODO"}, "content": inline(t)}
-            for t in items
-        ],
-    }
+def tasks(items: list) -> dict:
+    """Task list. Strings are unticked; {"text", "done"} keeps an existing tick."""
+    content = []
+    for item in items:
+        # A plain string is a new, unticked task.
+        text, done = (item, False) if isinstance(item, str) else (item["text"], item.get("done", False))
+        state = "DONE" if done else "TODO"
+        content.append({"type": "taskItem", "attrs": {"localId": str(uuid.uuid4()), "state": state}, "content": inline(text)})
+    return {"type": "taskList", "attrs": {"localId": str(uuid.uuid4())}, "content": content}
 
 
 def build(spec: dict) -> dict:
-    """Build the full sub-task description: What, Why, Tasks."""
+    """Build the full sub-task description: What, Why, Files, Tasks."""
     rule = {"type": "rule"}
     return {
         "type": "doc",
@@ -76,6 +79,7 @@ def build(spec: dict) -> dict:
         "content": [
             rule, heading("What"), bullets(spec["what"]),
             rule, heading("Why"), bullets(spec["why"]),
+            rule, heading("Files"), bullets(spec["files"]),
             rule, heading("Tasks"), tasks(spec["tasks"]),
         ],
     }

@@ -39,10 +39,13 @@ Also set: Parent (the Epic), Assignee, Priority.
 ## Sub-task
 
 - **Title:** starts with a verb, short and plain. Example: "Upgrade the build tool".
-- **Description:** 3 sections, each after a horizontal rule, with a bold heading.
+- **Description:** 4 sections, each after a horizontal rule, with a bold heading.
   1. **What:** bullets of what changes.
   2. **Why:** bullets of why it matters, sub-bullets for detail.
-  3. **Tasks:** a Jira checkbox list (ADF `taskList`). Small, logical tasks,
+  3. **Files:** every repo file the sub-task creates or edits, one path per
+     bullet in code format. Say "(new)" for new files. The user sees what
+     changes before any edit happens.
+  4. **Tasks:** a Jira checkbox list (ADF `taskList`). Small, logical tasks,
      each one commit that can be rolled back alone. Put the checks that prove
      the result last. No task numbers. No "Done When" section.
 - Build the description with `scripts/build_adf.py`. Never send `- [ ]` as
@@ -54,13 +57,14 @@ Also set: Parent (the Epic), Assignee, Priority.
 ```json
 {"what": ["Upgrade the build tool from 1.0 to 2.0"],
  "why": ["Version 1.0 is end of life.", ["No security fixes.", ["It gets no updates."]]],
+ "files": ["`requirements.txt`", "`docs/setup.md`"],
  "tasks": ["Pin the build tool to 2.0", "Update the setup docs", "Run the local checks", "Pull request checks pass"]}
 ```
 
 ### ADF shape, for writing by hand
 
 A sub-task description is one `doc` with: `rule`, bold `paragraph` "What",
-`bulletList`, `rule`, bold "Why", `bulletList`, `rule`, bold "Tasks", then a
+`bulletList`, `rule`, bold "Why", `bulletList`, `rule`, bold "Files", `bulletList`, `rule`, bold "Tasks", then a
 `taskList` of `taskItem`s:
 
 ```json

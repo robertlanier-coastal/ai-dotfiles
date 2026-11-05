@@ -46,7 +46,8 @@ Nothing is created in Jira until the user approves the full draft.
    clarifying questions, then use the answers. Leave Assigned tester empty.
 
 6. **Sub-tasks.** Split the work into the most simple, logical sub-tasks.
-   Titles start with a verb. In each, split Tasks into small steps that are one
+   Titles start with a verb. List the files each sub-task creates or edits.
+   In each, split Tasks into small steps that are one
    commit each and easy to roll back. Put the proving checks last. Reuse the
    plan's phases and tasks when there is a plan.
 
