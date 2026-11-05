@@ -68,6 +68,10 @@ read_when: Always. Read at the start of every session.
   in an inline code span: `git add <files> && git commit -m "<message>"`.
   **Do not:** split it into a multi-line code block.
   **Why:** the user asked for this format.
+- **Do:** before reminding the user to commit, check `git log` and
+  `git status` myself. If the commit is there, tick the task and move on.
+  **Do not:** ask whether a commit was made when git can answer it.
+  **Why:** the user asked not to be asked every time.
 - **Do:** before writing a phase's file, check in with the user. List the design
   choices (filters, columns kept or dropped, optimizations). Then write it.
   **Do not:** add optimizations (for example, removing zero rows) without asking.
