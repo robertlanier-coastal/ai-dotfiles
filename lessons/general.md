@@ -52,6 +52,10 @@ read_when: Always. Read at the start of every session.
   (for example "CCFIN4-143 commits").
   Do not: call them "Phase 1 commits". Plan phases are internal.
   Why: the user asked for this.
+- Do: keep plan files (`.agents/`) local in every repo, personal repos too.
+  Add `.agents/` to `.git/info/exclude`.
+  Do not: commit plans, even in `ai-dotfiles`.
+  Why: the user wants personal repos to match client repos.
 - Do: before writing a phase's file, check in with the user. List the design
   choices (filters, columns kept or dropped, optimizations). Then write it.
   Do not: add optimizations (for example, removing zero rows) without asking.
