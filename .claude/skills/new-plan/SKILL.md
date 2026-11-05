@@ -60,3 +60,7 @@ skill turns the approved draft into the working plan.
 
 6. **Report.** List the files created in one short block. Ask the user to
    review them before Phase 01 starts.
+
+7. **Offer the Jira story.** If the work needs Jira tickets, offer to run the
+   `create-jira-story` skill. It uses this plan to fill the story and its
+   sub-tasks, and asks only about what the plan does not cover.
