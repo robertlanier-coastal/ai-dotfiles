@@ -44,12 +44,12 @@ agent will read it.
    and internal URLs. Rewrite the Why line in general terms.
 
 4. **Pick the shared file.** Run
-   `uv run ~/src/coastal/ai-dotfiles/.claude/skills/capture-lesson/scripts/lesson_files.py list` and match on
+   `uv run ~/src/coastal/ai-dotfiles/.agents/skills/capture-lesson/scripts/lesson_files.py list` and match on
    `description` and `read_when`. Use a tool file (`snowflake.md`, `python.md`,
    `jira.md`, ...) for tool-specific lessons, `data-modeling.md` for
    tool-neutral modeling, and `general.md` for how to work with the user.
    If a new tool has no file, create it with
-   `uv run ~/src/coastal/ai-dotfiles/.claude/skills/capture-lesson/scripts/lesson_files.py new <tool> --read-when "<when to read it>"`.
+   `uv run ~/src/coastal/ai-dotfiles/.agents/skills/capture-lesson/scripts/lesson_files.py new <tool> --read-when "<when to read it>"`.
 
 5. **Check for duplicates.** Read the target file. If a lesson already covers
    this, sharpen that lesson instead of adding a near-copy.

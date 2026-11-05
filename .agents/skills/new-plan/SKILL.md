@@ -31,7 +31,7 @@ skill turns the approved draft into the working plan.
 4. **Create the files with the script.** Run from inside the repo:
 
    ```bash
-   uv run ~/src/coastal/ai-dotfiles/.claude/skills/new-plan/scripts/scaffold_plan.py <plan_name> --phases <phase_one>,<phase_two>
+   uv run ~/src/coastal/ai-dotfiles/.agents/skills/new-plan/scripts/scaffold_plan.py <plan_name> --phases <phase_one>,<phase_two>
    ```
 
    The script creates `todo.md`, `00_overview.md`, `lessons.md`, and one
