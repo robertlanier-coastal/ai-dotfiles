@@ -31,7 +31,7 @@ Also follow the writing style in `general.md`.
   Exception: deploy risks that do not depend on the final files (for example,
   what cannot be tested before merge) can go in Deployment Notes early.
 - Do: write Jira progress comments in this format: a bold title line
-  ("Update: <topic>"), then bold sections "Completed", "Findings",
+  (the topic, no "Update:" prefix), then bold sections "Completed", "Findings",
   "Tested", and "Next". Short bullets, one idea each, plain words. Explain
   any package or term in a few words. Skip a section if it is empty.
   Do not: use plan phase or task numbers in the comment.
