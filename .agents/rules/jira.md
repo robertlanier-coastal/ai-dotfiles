@@ -32,7 +32,8 @@ Also follow the writing style in `general.md`.
   what cannot be tested before merge) can go in Deployment Notes early.
 - **Do:** write Jira progress comments in this format: a bold title line
   (the topic, no "Update:" prefix), then bold sections "Completed", "Findings",
-  "Tested", and "Next". Short bullets, one idea each, plain words. Explain
+  "Tested", "Effort" (closing comments: commits and files, for example
+  "4 commits in 2 files: `a.yml` and `b.py`"), and "Next". Short bullets, one idea each, plain words. Explain
   any package or term in a few words. Skip a section if it is empty.
   **Do not:** use plan phase or task numbers in the comment.
   **Why:** the user liked this format for subtask comments and standups at every client.

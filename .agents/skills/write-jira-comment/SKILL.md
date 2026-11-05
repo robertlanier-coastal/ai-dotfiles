@@ -27,6 +27,9 @@ Read the shared rules `.agents/rules/jira.md` and `.agents/rules/general.md` in 
    **Tested**
    - <what was run, and the result>
 
+   **Effort**
+   - <N commits in M files: `file`, ...> (closing comments for a finished sub-task)
+
    **Next**
    - <the next step>
    ```
