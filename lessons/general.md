@@ -23,6 +23,22 @@ read_when: Always. Read at the start of every session.
 - Do: recount lists before quoting a count (for example, column counts).
   Why: a wrong column count was quoted for many turns.
 
+- Do: verify every finding (code review issue, bug, config problem) before
+  reporting it:
+  1. Read the code, config, or file directly. Do not report from pattern
+     matching alone.
+  2. Trace the path: confirm the code is reachable and not guarded.
+  3. Check external facts (package names, API behavior, tool versions) with
+     the web, the docs, or a command.
+  4. Try to disprove it. If a scenario makes the code correct, it may be a
+     false positive.
+  Label each finding **Confirmed** (verified) or **Plausible** (logic says so,
+  full check not possible; say what was checked and what is uncertain).
+  Do not: report false positives, or report an unverified finding as fact.
+  If a check is not possible (no network, no runtime), say so: "unverified:
+  could not check X".
+  Why: moved from `.claude/rules/verify-findings.md` so lessons are the single source.
+
 ## Design
 
 - Do not: copy a folder structure only to match an existing folder.
