@@ -1,7 +1,7 @@
 ---
 name: jira
 description: Jira ticket standards for the Coastal Snowflake Team.
-read_when: Writing or editing a Jira ticket (Acceptance Criteria, Testing tab, Deployment Notes, Release Notes).
+read_when: Writing or editing a Jira story, sub-task, or comment.
 ---
 
 # Jira lessons
@@ -25,7 +25,8 @@ Also follow the writing style in `general.md`.
 - Do: in Design Notes, say what we use and why.
   Do not: name tools we chose not to use.
   Why: the user asked to remove a rejected option from the notes.
-- Do: fill Deployment Notes and Release Notes only after the files exist.
+- Do: fill Deployment Notes only after the files exist. Leave Release Notes
+  empty (no releases today).
   Why: the user adds them when the scripts and scope are final.
   Exception: deploy risks that do not depend on the final files (for example,
   what cannot be tested before merge) can go in Deployment Notes early.

@@ -9,9 +9,10 @@
 
 ### 2. Subagent Strategy
 
-- Use subagents liberally to keep main context window clean
-- Offload research, exploration, and parallel analysis to subagents
-- For complex problems, use more compute for subagents
+- Use parallel tool calls for independent lookups and reads
+- Use subagents for heavy research or large reads, to keep the main context clean
+- Tell the user the token cost before starting subagents (about 130k tokens each)
+- Never use a subagent for a step that needs the user's answers
 - One task per subagent for focused execution
 
 ### 3. Self-Improvement Loop
@@ -60,8 +61,11 @@ The active plan is the one the user names. If none is named, list
    `~/src/coastal/ai-dotfiles/lessons/`. Lesson files are the source of
    truth. Do not save workflow lessons to Claude Code auto memory.
 
+For Jira stories, sub-tasks and progress comments, use the `create-jira-story`
+and `write-jira-comment` skills.
+
 If skills are not available (for example in CoCo), read the skill's `SKILL.md`
-in `~/src/coastal/ai-dotfiles/.claude/skills/<skill>/` and follow it.
+in `~/src/coastal/ai-dotfiles/.agents/skills/<skill>/` and follow it.
 
 ## Session Start
 
@@ -69,7 +73,7 @@ in `~/src/coastal/ai-dotfiles/.claude/skills/<skill>/` and follow it.
 
 1. Read `~/src/coastal/ai-dotfiles/lessons/general.md`. Skip this step if it
    is already loaded (Claude Code imports it through `CLAUDE.md`).
-2. Run `uv run ~/src/coastal/ai-dotfiles/.claude/skills/capture-lesson/scripts/lesson_files.py list`.
+2. Run `uv run ~/src/coastal/ai-dotfiles/.agents/skills/capture-lesson/scripts/lesson_files.py list`.
    Read each file whose `read_when` matches the task.
 3. Read `.agents/lessons.md` in the current repo, if it exists.
 4. Read `.agents/plans/<plan_name>/lessons.md` for the active plan, if it exists.
@@ -78,10 +82,12 @@ in `~/src/coastal/ai-dotfiles/.claude/skills/<skill>/` and follow it.
 
 - **Client or project repos:** Never commit or push to `main`. Always commit
   to a feature or fix branch and open a pull request.
-- **Personal repos (for example `~/src/coastal/ai-dotfiles`):** Ask the user,
-  then commit and push to `main`.
-- **Review first:** Make each task's change and leave it uncommitted. Show the
-  diff, wait for the user's go-ahead, then commit. Push when a phase is done.
+- **Client or project repos, review first:** Make each task's change and leave
+  it uncommitted. Show the diff, wait for the user's go-ahead, then commit.
+  Push when a phase or sub-task is done.
+- **Personal repos (for example `~/src/coastal/ai-dotfiles`):** Always ask
+  first. Users differ, so offer the choice: review each diff first, or commit
+  and push to `main` directly. Ask clarifying questions until the request is clear.
 
 ## Core Principles
 

@@ -42,8 +42,7 @@
 - **Shell:** ShellCheck-clean.
 - **GitHub CLI access** `gh`
 - **Default branch:** `main`.
-- **Client or project repos:** Never commit or push to `main`. Always commit to a feature or fix branch and open a pull request.
-- **Personal repos (for example `~/src/coastal/ai-dotfiles`):** Ask me, then commit and push to `main`.
+- **Commit and push rules:** See the Git section in `AGENTS.local.md`.
 - **Git Branch naming:** `<type>/<Jira ticket>-<description>`
 - **Always Use Conventional Commits format.**
 - **Pull strategy:** rebase.

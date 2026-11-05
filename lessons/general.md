@@ -22,7 +22,6 @@ read_when: Always. Read at the start of every session.
 - Do: read a referenced repo folder before calling it a model to follow.
 - Do: recount lists before quoting a count (for example, column counts).
   Why: a wrong column count was quoted for many turns.
-
 - Do: verify every finding (code review issue, bug, config problem) before
   reporting it:
   1. Read the code, config, or file directly. Do not report from pattern
@@ -56,21 +55,14 @@ read_when: Always. Read at the start of every session.
   Do not: plan one commit per phase or per sub-task.
   Why: small commits let reviewers read the pull request one commit at a
   time, and let any one change be rolled back.
-- Do: make each task's change and leave it uncommitted. Show the diff and
-  wait for the user's go-ahead. Then commit. Push only when a whole phase is done.
-  Do not: commit before the user has reviewed the change.
-  Why: the user wants to review every change before it is committed.
-- Do: in personal repos (such as `ai-dotfiles`), ask, then commit and push to
-  `main`. In client or project repos, never commit or push to `main`: use a
-  branch and a pull request.
-  Why: the user set this rule. The global CLAUDE.md has the same rule.
 - Do: in PRs, comments and tickets, group commits by their Jira sub-task key
-  (for example "CCFIN4-143 commits").
+  (for example "ABC-12 commits").
   Do not: call them "Phase 1 commits". Plan phases are internal.
   Why: the user asked for this.
-- Do: keep plan files (`.agents/`) local in every repo, personal repos too.
-  Add `.agents/` to `.git/info/exclude`.
-  Do not: commit plans, even in `ai-dotfiles`.
+- Do: keep plan files (`.agents/plans/`) local in every repo, personal repos too.
+  Client repos: add `.agents/` to `.git/info/exclude`. `ai-dotfiles`: its
+  `.gitignore` ignores `.agents/plans/`, because `.agents/skills/` is committed.
+  Do not: commit plans.
   Why: the user wants personal repos to match client repos.
 - Do: before writing a phase's file, check in with the user. List the design
   choices (filters, columns kept or dropped, optimizations). Then write it.
