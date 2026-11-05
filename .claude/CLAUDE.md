@@ -18,6 +18,7 @@
 ## Environment
 
 - **Shell:** Zsh with Starship prompt, zoxide, fzf
+- **Editor:** VS Code (primary) used as git editor only. Learning to use Neovim as an alternative to VS Code.
 - **No Admin Access:** User Tools installed locally or within `~/.local/bin`
 - **Containers:** Podman, not Docker. Use `podman` in commands, not `docker`.
 - **Config standard:** XDG Base Directory Spec. Configs go in `~/.config/`, not bare `~/`.
@@ -28,35 +29,16 @@
 - **Credential Management:** 1Password via `Coastal` vault.
 - **1Password CLI access:** `op`
 - **Version control:** Git and GitHub
+- **GitHub CLI access:** `gh`
 - **Slack**
 - **Ticketing:** Jira
-
-## Code preferences
-
-- **Editor:**  VS Code (primary) used as git editor only. Learning to use Neovim as an alternative to VS Code.
-- **Always add simple docstrings:** To functions and classes.
-- **Always add simple comments:** Above line of code
-- **Do not introduce abstractions beyond what the task requires.**
-- **Do not add error handling for scenarios that can't happen.**
-- **Python:** Use `uv` for project management and Ruff for linting
-- **Shell:** ShellCheck-clean.
-- **GitHub CLI access** `gh`
-- **Default branch:** `main`.
-- **Commit and push rules:** See the Git section in `~/src/coastal/ai-dotfiles/.agents/AGENTS.md`.
-- **Git Branch naming:** `<type>/<Jira ticket>-<description>`
-- **Always Use Conventional Commits format.**
-- **Pull strategy:** rebase.
 
 ## Skill workflow preferences
 
 - **Code Simplifier(`code-simplifier:code-simplifier`):** Always report findings first with numbered items before applying any changes. Prompt with: "Apply all fixes, select by number (e.g. 1,3), or provide your own answer?" Wait for a response before touching files.
 
-## Documentation preferences
-
-- Use `|---|---|` separator style for Markdown tables (compact, MD060 disabled).
-- No time estimates in documentation: they deter engineers from reading.
-- Do not use the em-dash character (`—`) in any document, post, README, CONTRIBUTING file, or written communication. Restructure the sentence to use a comma, colon, or semicolon instead.
-
 ## Workflow
+
+Code, git, documentation and workflow rules for any machine:
 
 @~/src/coastal/ai-dotfiles/.agents/AGENTS.md
