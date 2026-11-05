@@ -64,6 +64,10 @@ read_when: Always. Read at the start of every session.
   `.gitignore` ignores `.agents/plans/`, because `.agents/skills/` is committed.
   **Do not:** commit plans.
   **Why:** the user wants personal repos to match client repos.
+- **Do:** when the user will commit, give one line that stages and commits,
+  in an inline code span: `git add <files> && git commit -m "<message>"`.
+  **Do not:** split it into a multi-line code block.
+  **Why:** the user asked for this format.
 - **Do:** before writing a phase's file, check in with the user. List the design
   choices (filters, columns kept or dropped, optimizations). Then write it.
   **Do not:** add optimizations (for example, removing zero rows) without asking.
