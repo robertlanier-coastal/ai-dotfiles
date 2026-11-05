@@ -8,6 +8,10 @@ read_when: Writing or editing a Jira ticket (Acceptance Criteria, Testing tab, D
 
 Also follow the writing style in `general.md`.
 
+- Do: before editing any Jira field, read its current value, then change only
+  the lines that need to change. Keep the user's sections, order and format.
+  Do not: rewrite a field from my own earlier copy.
+  Why: I overwrote a Why section and a Tasks section the user had added.
 - Do: write Acceptance Criteria (AC) as work the data engineer does and can check.
   Do not: add business owner sign-off or approvals to AC.
   Why: AC must be verifiable by the engineer. Approvals are tracked elsewhere.
