@@ -2,7 +2,7 @@
 name: new-plan
 description: >
   Turns an approved plan into the plan folder layout `.agents/plans/<plan_name>/`
-  (todo.md checklist, 00_overview.md, one guide file per phase, lessons.md).
+  (todo.md checklist, 00_overview.md, one guide file per phase, rules.md).
   Use right after the user approves a plan, including a plan written in plan mode,
   and whenever the user asks to start, set up, scaffold, or write down a new plan,
   project, or multi-phase task, even if they do not say "new-plan".
@@ -34,7 +34,7 @@ skill turns the approved draft into the working plan.
    uv run ~/src/coastal/ai-dotfiles/.agents/skills/new-plan/scripts/scaffold_plan.py <plan_name> --phases <phase_one>,<phase_two>
    ```
 
-   The script creates `todo.md`, `00_overview.md`, `lessons.md`, and one
+   The script creates `todo.md`, `00_overview.md`, `rules.md`, and one
    `NN_<phase>.md` per phase from the templates in `assets/`. It checks two
    things first and writes nothing if either fails:
    - Exit `2`, `NOT-IGNORED`: `.agents/` would show up in git. Client repos

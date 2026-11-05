@@ -108,7 +108,7 @@ def main() -> int:
     for template, target in [
         ("todo.md", "todo.md"),
         ("overview.md", "00_overview.md"),
-        ("lessons.md", "lessons.md"),
+        ("rules.md", "rules.md"),
     ]:
         (plan_dir / target).write_text(render(template, plan_name=args.plan_name))
         written.append(target)

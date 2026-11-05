@@ -5,7 +5,7 @@
 This plan is for the agent to follow. Before each phase, read the phase file
 in this folder. After each phase, fill in its Results log and tick the box here.
 
-Before starting: read `.agents/lessons.md` and this folder's `lessons.md`.
+Before starting: read `.agents/rules.md` and this folder's `rules.md`.
 
 ## Phases
 
@@ -24,4 +24,4 @@ Fill in when all phases are done.
 - Test results:
 - Known gaps:
 - Open questions:
-- Lessons captured:
+- Rules written:
