@@ -14,8 +14,9 @@ import re
 import sys
 from pathlib import Path
 
-# Shared rules live in the ai-dotfiles repo.
-RULES = Path.home() / "src" / "coastal" / "ai-dotfiles" / ".agents" / "rules"
+# Shared rules live in the same ai-dotfiles repo as this script:
+# <ai-dotfiles>/.agents/skills/write-rule/scripts/rule_files.py -> <ai-dotfiles>/.agents/rules
+RULES = Path(__file__).resolve().parents[3] / "rules"
 
 # Template for a new tool file, next to this script in ../assets.
 TEMPLATE = Path(__file__).resolve().parent.parent / "assets" / "topic-file.md"
