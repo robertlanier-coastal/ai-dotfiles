@@ -56,7 +56,9 @@ Nothing is created in Jira until the user approves the full draft.
 8. **Create in Jira.**
    1. Create the story with its fields (markdown is fine for story fields).
    2. For each sub-task, write its JSON (see `references/format.md`), run
-      `uv run scripts/build_adf.py <file>`, and create it with the parent key
+      `uv run scripts/build_adf.py <file>` (or `python3 scripts/build_adf.py <file>`
+      without uv; by hand from the ADF example in `references/format.md` without
+      Python), and create it with the parent key
       and `contentFormat: "adf"`.
    3. Read one sub-task back and confirm the Tasks are checkboxes.
    4. Report the new keys and links.

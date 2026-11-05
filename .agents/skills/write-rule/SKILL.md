@@ -48,7 +48,11 @@ and lives where the next agent will read it.
 
 4. **Pick the shared file.** Run
    `uv run scripts/rule_files.py list` from this skill's folder
-   and match on `description`, `read_when`, and `paths`. Use a tool file
+   and match on `description`, `read_when`, and `paths`.
+   If `uv` is not available, run the same script with `python3` (it uses only
+   the standard library). If Python is not available either, read the
+   frontmatter of each `<ai-dotfiles>/.agents/rules/*.md` file, and copy
+   `assets/topic-file.md` by hand for a new file. Use a tool file
    (`snowflake.md`, `python.md`, `jira.md`, ...) for tool-specific rules,
    `data-modeling.md` for tool-neutral modeling, and `general.md` for how to
    work with the user. If a new topic has no file, create it with

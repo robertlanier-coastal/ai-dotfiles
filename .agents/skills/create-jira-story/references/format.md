@@ -56,3 +56,20 @@ Also set: Parent (the Epic), Assignee, Priority.
  "why": ["Version 1.0 is end of life.", ["No security fixes.", ["It gets no updates."]]],
  "tasks": ["Pin the build tool to 2.0", "Update the setup docs", "Run the local checks", "Pull request checks pass"]}
 ```
+
+### ADF shape, for writing by hand
+
+A sub-task description is one `doc` with: `rule`, bold `paragraph` "What",
+`bulletList`, `rule`, bold "Why", `bulletList`, `rule`, bold "Tasks", then a
+`taskList` of `taskItem`s:
+
+```json
+{"type": "taskList", "attrs": {"localId": "any-unique-id"},
+ "content": [
+   {"type": "taskItem", "attrs": {"localId": "another-unique-id", "state": "TODO"},
+    "content": [{"type": "text", "text": "Pin the build tool to 2.0"}]}
+ ]}
+```
+
+Inline code is a text node with `"marks": [{"type": "code"}]`.
+

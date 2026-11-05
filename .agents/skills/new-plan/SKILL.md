@@ -34,6 +34,11 @@ skill turns the approved draft into the working plan.
    uv run <this skill's folder>/scripts/scaffold_plan.py <plan_name> --phases <phase_one>,<phase_two>
    ```
 
+   If `uv` is not available, run the same script with `python3` (it uses only
+   the standard library). If Python is not available either, copy the files in
+   `assets/` into `.agents/plans/<plan_name>/`, rename them, and fill them in.
+   Check by hand that `.agents/` is ignored by git first.
+
    The script creates `todo.md`, `00_overview.md`, `rules.md`, and one
    `NN_<phase>.md` per phase from the templates in `assets/`. It checks two
    things first and writes nothing if either fails:
