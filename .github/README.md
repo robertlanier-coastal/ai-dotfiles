@@ -42,7 +42,7 @@ ai-dotfiles/
 ├── .agents/
 │   ├── AGENTS.md                 # rules for any agent on any machine
 │   ├── rules/                    # shared rules, one file per topic or tool
-│   ├── skills/                   # create-jira-story, new-plan, write-jira-comment, write-rule
+│   ├── skills/                   # create-jira-story, new-plan, run-workflows-locally, write-jira-comment, write-rule
 │   └── plans/                    # local plans, ignored by git
 ├── .github/
 │   └── README.md
